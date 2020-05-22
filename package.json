@@ -1,0 +1,19 @@
+{
+  "name": "tool-todosmanager-electron",
+  "version": "1.0.0",
+  "description": "taskmanager for school in electron",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moritzzier/tool-todosmanager-electron.git"
+  },
+  "author": "Moritz Zier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moritzzier/tool-todosmanager-electron/issues"
+  },
+  "homepage": "https://github.com/moritzzier/tool-todosmanager-electron#readme"
+}
