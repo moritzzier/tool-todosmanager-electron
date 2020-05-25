@@ -22,4 +22,19 @@ CREATE TABLE IF NOT EXISTS todos_mitarbeiter (
     PRIMARY KEY (id),
     CONSTRAINT FK_todos FOREIGN KEY (todos_id) REFERENCES todos(id),
     CONSTRAINT FK_mitarbeiter FOREIGN KEY (mitarbeiter_id) REFERENCES mitarbeiter(id)
+);
+
+DELIMITER //
+CREATE PROCEDURE `mitarbeiter_entfernen`(
+	IN `_id` INT
 )
+LANGUAGE SQL
+DETERMINISTIC
+MODIFIES SQL DATA
+SQL SECURITY DEFINER
+
+BEGIN
+	DELETE FROM todos_mitarbeiter WHERE mitarbeiter_id = _id;
+	DELETE FROM mitarbeiter WHERE id = _id;
+END //
+DELIMITER ;
