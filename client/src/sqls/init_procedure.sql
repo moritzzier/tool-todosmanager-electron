@@ -1,6 +1,6 @@
 USE tool_todosmanager_electron;
 
-CREATE PROCEDURE `mitarbeiter_entfernen`(
+CREATE PROCEDURE IF NOT EXISTS `mitarbeiter_entfernen`(
 	IN `_id` INT
 )
 LANGUAGE SQL

@@ -1,6 +1,148 @@
+:root {
+  --background: #121212;
+  --paper: #333333;
+  --textPrimary: #ffffff;
+  --textSecondary: #b3b3b3;
+  --divider: #ffffff1f;
+  --shadow: 0 2px 5px black;
+}
+
+html {
+  background-color: var(--background);
+}
+
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: auto;
-  max-width: 38rem;
-  padding: 2rem;
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+.root {
+  max-width: 960px;
+  display: flex;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.todos {
+  flex-grow: 2;
+}
+
+.users {
+  flex-grow: 1;
+  margin-left: 16px;
+}
+
+.header {
+  display: flex;
+  flex-grow: 1;
+  height: 64px;
+}
+
+.list {
+}
+
+.todo {
+  margin-bottom: 8px;
+  background: var(--paper);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+}
+
+.todo-users {
+  margin-top: 8px;
+  display: flex;
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background: var(--paper);
+  border-radius: 4px;
+  padding: 8px;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.circle-button {
+  height: 48px;
+  width: 48px;
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  background: var(--paper);
+}
+
+.checkbox-button {
+  height: 24px;
+  width: 24px;
+  background: var(--background);
+  border-radius: 4px;
+  margin-right: 8px;
+}
+
+.user-avatar {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ff00001f;
+  margin-right: 8px;
+}
+
+.user-avatar-add {
+  height: 36px;
+  width: 36px;
+  border: 1px dashed var(--divider);
+  border-radius: 18px;
+  background: var(--paper);
+}
+
+.typo-header {
+  color: var(--textSecondary);
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.typo-main {
+  color: var(--textPrimary);
+  font-size: 16px;
+}
+
+.material-icons {
+  color: var(--textSecondary);
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
 }

@@ -2,7 +2,15 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Hello World!</title>
+    <title>Todosmanager</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link rel="stylesheet" href="index.css" />
     <script>
       var exports = { __esModule: true };
@@ -10,7 +18,89 @@
     <script src="frontend.js"></script>
   </head>
   <body>
-    <h1>💖 Hello World!</h1>
-    <p>Welcome to your Electron application.</p>
+    <div class="root">
+      <div class="todos">
+        <div class="header">
+          <span class="typo-header">
+            Todos
+          </span>
+          <button class="circle-button">
+            <span class="material-icons">
+              add
+            </span>
+          </button>
+        </div>
+        <div class="list">
+          <div class="todo">
+            <div class="todo-header">
+              <button class="checkbox-button"></button>
+              <span class="typo-main">Hausaufgaben</span>
+            </div>
+            <div class="todo-users">
+              <div class="user-avatar">
+                <span class="typo-main">
+                  M
+                </span>
+              </div>
+              <div class="user-avatar">
+                <span class="typo-main">
+                  M
+                </span>
+              </div>
+              <button class="user-avatar-add">
+                <span class="material-icons">
+                  add
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="todo">
+            <div class="todo-header">
+              <button class="checkbox-button"></button>
+              <span class="typo-main">Hausaufgaben</span>
+            </div>
+            <div class="todo-users">
+              <div class="user-avatar">
+                <span class="typo-main">
+                  M
+                </span>
+              </div>
+              <div class="user-avatar">
+                <span class="typo-main">
+                  M
+                </span>
+              </div>
+              <button class="user-avatar-add">
+                <span class="material-icons">
+                  add
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="users">
+        <div class="header">
+          <span class="typo-header">
+            Mitarbeiter
+          </span>
+          <button class="circle-button">
+            <span class="material-icons">
+              add
+            </span>
+          </button>
+        </div>
+        <div class="list">
+          <div class="user">
+            <div class="user-avatar">
+              <span class="typo-main">M</span>
+            </div>
+            <span class="typo-main">
+              Moritz Zier
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
