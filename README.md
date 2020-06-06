@@ -1,6 +1,6 @@
 # tool-todosmanager-electron
 
-Todosmanager for school in written in Javascript and Electron
+Todosmanager for school written in Javascript and Electron
 
 ## Getting Started
 
