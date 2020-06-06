@@ -73,9 +73,34 @@ body {
   flex-grow: 1;
 }
 
+select {
+  font-family: inherit;
+  height: 36px;
+  font-size: 16px;
+  background: var(--paper);
+  border: none;
+  color: var(--textPrimary);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--textSecondary);
+}
+
 button {
   border: none;
   cursor: pointer;
+}
+
+.button {
+  margin-left: 8px;
+  text-transform: uppercase;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  height: 36px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background-color: var(--paper);
+  color: var(--textPrimary);
+  border: 1px solid var(--divider);
 }
 
 .circle-button {
@@ -87,11 +112,22 @@ button {
 }
 
 .checkbox-button {
-  height: 24px;
-  width: 24px;
+  height: 20px;
+  width: 20px;
   background: var(--background);
   border-radius: 4px;
   margin-right: 8px;
+}
+
+.input {
+  font-family: inherit;
+  height: 36px;
+  font-size: 16px;
+  background: var(--paper);
+  border: none;
+  color: var(--textPrimary);
+  padding: 4px 8px;
+  border-bottom: 1px solid var(--textSecondary);
 }
 
 .user-avatar {

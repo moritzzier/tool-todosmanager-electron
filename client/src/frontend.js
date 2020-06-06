@@ -34,13 +34,13 @@ async function renderTodos() {
         <div class="todo-users">
           ${todo.mitarbeiter.map((user) => {
             return `
-              <div class="user-avatar" onclick="removeTodoUser(${todo.id}, ${
+              <button class="user-avatar" onclick="removeTodoUser(${todo.id}, ${
               user.id
             })">
                 <span class="typo-main">
                   ${user.vorname.substring(0, 1)}
                 </span>
-              </div>
+              </button>
         `;
           })}
           <button class="user-avatar-add" onclick="openTodoUserAddModal(${
@@ -110,8 +110,8 @@ async function openTodoAddModal() {
     <div id="todos_add_modal" class="modal" onclick="closeModals()">
       <div class="dialog">
         <form id="todos_add_modal_form">
-          <input id="todos_add_modal_name" type="text" placeholder="Todo-Name"></input>
-          <button type="submit">Hinzufügen</button>
+          <input class="input" id="todos_add_modal_name" type="text" placeholder="Todo-Name"></input>
+          <button class="button" type="submit">Hinzufügen</button>
         </form>
       </div>
     </div>`);
@@ -133,9 +133,9 @@ async function openUserAddModal() {
   <div id="user_add_modal" class="modal" onclick="closeModals()">
     <div class="dialog">
       <form id="user_add_modal_form">
-        <input id="user_add_modal_vorname" type="text" placeholder="Vorname"></input>
-        <input id="user_add_modal_nachname"type="text" placeholder="Nachname"></input>
-        <button type="submit">Hinzufügen</button>
+        <input class="input" id="user_add_modal_vorname" type="text" placeholder="Vorname"></input>
+        <input class="input" id="user_add_modal_nachname"type="text" placeholder="Nachname"></input>
+        <button class="button" type="submit">Hinzufügen</button>
       </form>
     </div>
   </div>`);
@@ -163,7 +163,7 @@ async function openTodoUserAddModal(id) {
         ).map((user) => {
           return `<option value="${user.id}">${user.vorname} ${user.nachname}</option>`;
         })}</select>
-        <button type="submit">Hinzufügen</button>
+        <button class="button" type="submit">Hinzufügen</button>
       </form>
     </div>
   </div>`);
