@@ -8,7 +8,9 @@ const connection = mysql.createConnection({
   multipleStatements: true,
 });
 
-function initialize() {
+const initialized = false;
+
+async function initialize() {
   connection.connect();
   console.log(__dirname + "\\init.sql");
 
@@ -21,11 +23,28 @@ function initialize() {
         (err, result) => {
           if (err) throw err;
           console.log(result);
+          initialized = true;
+          return true;
         }
       );
     }
   );
 }
 
+function query(querystring, queryvalues) {
+  return new Promise((resolve, reject) => {
+    if (!initialized) {
+      return false;
+    }
+    connection.query(querystring, queryvalues, (err, result) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(result);
+    });
+  });
+}
+
 exports.connection = connection;
 exports.initialize = initialize;
+exports.query = query;
