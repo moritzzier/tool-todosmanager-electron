@@ -69,6 +69,10 @@ body {
   padding: 8px;
 }
 
+.grow {
+  flex-grow: 1;
+}
+
 button {
   border: none;
   cursor: pointer;
@@ -110,6 +114,13 @@ button {
   background: var(--paper);
 }
 
+.user-avatar-remove {
+  height: 36px;
+  width: 36px;
+  border-radius: 18px;
+  background: var(--paper);
+}
+
 .typo-header {
   color: var(--textSecondary);
   font-size: 14px;
@@ -145,4 +156,27 @@ button {
 
   /* Support for IE. */
   font-feature-settings: "liga";
+}
+
+.disabled {
+  display: "none";
+}
+
+.modal {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000001f;
+  backdrop-filter: blur(2px);
+}
+.dialog {
+  padding: 16px;
+  border-radius: 4px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
 }

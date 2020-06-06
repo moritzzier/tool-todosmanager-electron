@@ -24,83 +24,28 @@
           <span class="typo-header">
             Todos
           </span>
-          <button class="circle-button">
+          <button class="circle-button" onclick="openTodoAddModal()">
             <span class="material-icons">
               add
             </span>
           </button>
         </div>
-        <div class="list">
-          <div class="todo">
-            <div class="todo-header">
-              <button class="checkbox-button"></button>
-              <span class="typo-main">Hausaufgaben</span>
-            </div>
-            <div class="todo-users">
-              <div class="user-avatar">
-                <span class="typo-main">
-                  M
-                </span>
-              </div>
-              <div class="user-avatar">
-                <span class="typo-main">
-                  M
-                </span>
-              </div>
-              <button class="user-avatar-add">
-                <span class="material-icons">
-                  add
-                </span>
-              </button>
-            </div>
-          </div>
-          <div class="todo">
-            <div class="todo-header">
-              <button class="checkbox-button"></button>
-              <span class="typo-main">Hausaufgaben</span>
-            </div>
-            <div class="todo-users">
-              <div class="user-avatar">
-                <span class="typo-main">
-                  M
-                </span>
-              </div>
-              <div class="user-avatar">
-                <span class="typo-main">
-                  M
-                </span>
-              </div>
-              <button class="user-avatar-add">
-                <span class="material-icons">
-                  add
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
+        <div id="todos_list" class="list"></div>
       </div>
       <div class="users">
         <div class="header">
           <span class="typo-header">
             Mitarbeiter
           </span>
-          <button class="circle-button">
+          <button class="circle-button" onclick="openUserAddModal()">
             <span class="material-icons">
               add
             </span>
           </button>
         </div>
-        <div class="list">
-          <div class="user">
-            <div class="user-avatar">
-              <span class="typo-main">M</span>
-            </div>
-            <span class="typo-main">
-              Moritz Zier
-            </span>
-          </div>
-        </div>
+        <div id="mitarbeiter_list" class="list"></div>
       </div>
     </div>
+    <div id="modals"></div>
   </body>
 </html>

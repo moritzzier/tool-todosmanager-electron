@@ -12,29 +12,43 @@ var initialized = false;
 
 function initialize() {
   return new Promise((resolve, reject) => {
-    connection.connect();
-
-    console.log(__dirname + "\\init.sql");
-
-    connection.query(
-      fs.readFileSync(__dirname + "/sqls/init_tables.sql", "utf8"),
-      (err, result) => {
+    if (initialized === false) {
+      console.log("[CONTROLLER]", "Datenbank wird initialisiert");
+      connection.connect((err) => {
         if (err) {
-          reject(err);
+          console.error("[CONTROLLER]", err);
         }
         connection.query(
-          fs.readFileSync(__dirname + "/sqls/init_procedure.sql", "utf8"),
+          fs.readFileSync(__dirname + "/sqls/init_tables.sql", "utf8"),
           (err, result) => {
             if (err) {
               reject(err);
             }
-            console.log("Datenbank erfolgreich initialisiert!");
-            initialized = true;
-            resolve();
+            console.log("[CONTROLLER]", "Tabellen wurden initialisiert");
+            connection.query(
+              fs.readFileSync(__dirname + "/sqls/init_procedure.sql", "utf8"),
+              (err, result) => {
+                if (err) {
+                  reject(err);
+                }
+                console.log(
+                  "[CONTROLLER]",
+                  "StoredProcedures wurden initialisiert"
+                );
+                console.log(
+                  "[CONTROLLER]",
+                  "Datenbank erfolgreich initialisiert!"
+                );
+                initialized = true;
+                resolve();
+              }
+            );
           }
         );
-      }
-    );
+      });
+    } else {
+      resolve();
+    }
   });
 }
 
