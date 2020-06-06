@@ -1,12 +1,18 @@
 const { controller, initialize } = require("./controller");
 const { getTodos } = require("./controllers/todoController");
+const { getMitarbeiter } = require("./controllers/mitarbeiterController");
 
 initialize().then(() => {
   renderTodos();
+  renderMitarbeiter();
 });
 
 async function renderTodos() {
-  const result = await getTodos();
+  const todos = await getTodos();
+  console.log("todos", todos);
+}
 
-  console.log(result);
+async function renderMitarbeiter() {
+  const mitarbeiter = await getMitarbeiter();
+  console.log("mitarbeiter", mitarbeiter);
 }

@@ -8,34 +8,38 @@ const connection = mysql.createConnection({
   multipleStatements: true,
 });
 
-const initialized = false;
+var initialized = false;
 
-async function initialize() {
-  connection.connect();
-  console.log(__dirname + "\\init.sql");
+function initialize() {
+  return new Promise((resolve, reject) => {
+    connection.connect();
 
-  connection.query(
-    fs.readFileSync(__dirname + "/sqls/init_tables.sql", "utf8"),
-    (err, result) => {
-      if (err) throw err;
-      connection.query(
-        fs.readFileSync(__dirname + "/sqls/init_procedure.sql", "utf8"),
-        (err, result) => {
-          if (err) throw err;
-          console.log(result);
-          initialized = true;
-          return true;
+    console.log(__dirname + "\\init.sql");
+
+    connection.query(
+      fs.readFileSync(__dirname + "/sqls/init_tables.sql", "utf8"),
+      (err, result) => {
+        if (err) {
+          reject(err);
         }
-      );
-    }
-  );
+        connection.query(
+          fs.readFileSync(__dirname + "/sqls/init_procedure.sql", "utf8"),
+          (err, result) => {
+            if (err) {
+              reject(err);
+            }
+            console.log("Datenbank erfolgreich initialisiert!");
+            initialized = true;
+            resolve();
+          }
+        );
+      }
+    );
+  });
 }
 
 function query(querystring, queryvalues) {
   return new Promise((resolve, reject) => {
-    if (!initialized) {
-      return false;
-    }
     connection.query(querystring, queryvalues, (err, result) => {
       if (err) {
         reject(err);
